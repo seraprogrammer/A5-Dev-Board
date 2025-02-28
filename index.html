@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevBoard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-icons@latest/dist/lucide.css">
+  <link rel="stylesheet" href="./index-CQfYVEE1.css">
+</head>
+
+<body class="min-h-screen bg-gray-50 p-4 md:p-8">
+  <div class="mx-auto max-w-[80%] space-y-6">
+    <!-- Header -->
+    <div class="rounded-xl bg-white p-4 shadow-sm">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="flex h-8 w-8 items-center justify-center rounded bg-blue-600 text-white">
+            <img src="./photo/logo.png" alt="">
+          </div>
+          <span class="text-lg font-semibold">DevBoard</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-3 rounded-lg bg-blue-100 px-4 py-2 text-[#3752FD]">
+            <img class="h-5 w-5" src="./photo/checkbox.png" alt="">
+            <span class="text-[25px] font-bold text-black" id="completed-tasks">23</span>
+          </div>
+          <div class="h-8 w-8 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 cursor-pointer"
+            id="theme-btn">
+            <img src="./photo/theme-btn.png" alt="" class="active:animate-spin">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex flex-col gap-6 lg:flex-row">
+      <!-- Tasks, Discovery, and Time Box -->
+      <div class="flex-1 rounded-xl bg-white p-6 shadow-sm">
+        <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <!-- Task Assigned -->
+          <div class="flex items-center gap-4 rounded-lg bg-[#F4F7FF] w-[263px] h-[128px] px-10 py-5">
+            <div class="p-2 inline-block rounded rounded-[30px] outline-8 outline-white">
+              <img src="./photo/checkbox.png" alt="">
+            </div>
+            <div>
+              <p class="text-sm text-gray-600">Task Assigned</p>
+              <p class="text-xl text-[30px] text-black font-bold" id="task-assigned">0</p>
+            </div>
+          </div>
+
+          <!-- Banner -->
+          <a href="./blog.html">
+            <div
+              class="rounded-lg bg-gradient-to-r from-blue-500 to-blue-400 w-[60%] w-[524px] h-[128px] px-10 py-5 text-center text-white shadow-lg flex items-center justify-center"
+              style="border-radius: 12px; background: linear-gradient(92deg, #3752FD 0.25%, #6C7FFA 52.64%, #9BA8F8 99.84%);">
+              <div class="flex items-center gap-3">
+                <div class="flex h-12 w-12 items-center justify-center rounded-l-lg bg-white bg-opacity-20">
+                  <div class="relative">
+                    <img src="./photo/board.png" alt="">
+                    <div class="absolute -right-1 -top-1 h-3 w-3 rounded-full bg-yellow-400"></div>
+                  </div>
+                </div>
+                <p class="text-lg font-medium">Discover Something New Today!</p>
+              </div>
+            </div>
+          </a>
+
+
+          <!-- Date -->
+          <div class="flex items-center gap-3 rounded-lg bg-[#F4F7FF] w-[263px] h-[128px] text-center px-10 py-5 ">
+            <div class="flex h-10 w-10 items-center justify-center rounded-[30px]">
+              <img src="./photo/calender.png" alt="">
+            </div>
+            <p class="text-[18px] text-gray-700 font-bold" id="date"></p>
+          </div>
+        </div>
+
+        <!-- Task Cards -->
+        <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" id="task-cards"></div>
+      </div>
+
+      <!-- Activity Log Box -->
+      <div class=" w-full rounded-xl bg-white p-6 shadow-sm lg:w-80">
+        <div class="mb-4 flex items-center justify-between">
+          <div class="flex items-center gap-2 text-gray-600">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 lucide-clock" fill="none" stroke="currentColor"
+              stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <h2 class="text-lg font-semibold">Activity Log</h2>
+          </div>
+          <button class="rounded-lg bg-[#3752FD] px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"
+            id="clear-history">
+            Clear History
+          </button>
+        </div>
+        <div class=" space-y-4">
+          <div class="flex flex-col items-start gap-3" id="activity-log">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./app.js"></script>
+</body>
+
+</html>
