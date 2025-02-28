@@ -46,16 +46,18 @@ const getCards = document.getElementById("task-cards");
 getCards.innerHTML = cards
   .map((card, index) => {
     return `
-    <div class="rounded-xl bg-[#F4F7FF] p-5 md:p-6 lg:p-7 w-full max-w-md md:max-w-lg lg:max-w-xl">
+    <div class="rounded-xl bg-[#F4F7FF] p-5 md:p-6 lg:p-7 w-full max-w-md md:max-w-lg lg:max-w-xl shadow-lg">
   <p class="mb-2 text-sm font-medium text-gray-600 bg-white px-5 py-3 rounded-lg w-fit max-w-[80%] sm:max-w-[70%] md:max-w-[60%]">
     ${card.label}
   </p>
   <h3 class="mb-3 text-lg font-semibold text-gray-800 text-wrap">
     ${card.title}
   </h3>
-  <p class="mb-6 text-sm text-gray-400 bg-white px-5 py-5 rounded-lg text-center break-words">
+ <div class="px-2">
+  <p class="mb-6 text-gray-400 bg-white px-5 py-5 rounded-lg text-center break-words">
     ${card.description}
   </p>
+  </div>
   <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
     <div class="text-center sm:text-left">
       <p class="text-xs text-gray-400">Deadline</p>
@@ -98,7 +100,7 @@ completeButtons.forEach((btn, index) => {
       if (activityLog) {
         activityLog.insertAdjacentHTML(
           "beforeend",
-          `<div class="flex-1 px-4 py-4 bg-[#F4F7FF] rounded-lg">
+          `<div class="flex-1 px-4 py-4 rounded-lg bg-white p-6 shadow-sm">
             <p class="text-sm text-gray-800">
               <span class="font-medium">You have completed the task:</span> ${
                 card.title

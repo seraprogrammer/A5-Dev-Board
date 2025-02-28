@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+html body {
+  font-family: "Poppins", sans-serif;
+}
+
+.mb-4.flex.items-center.justify-between {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rounded-xl.bg-white.p-4.shadow-sm {
+  margin-top: 15px;
+}

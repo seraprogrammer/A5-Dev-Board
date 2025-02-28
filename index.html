@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DevBoard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-icons@latest/dist/lucide.css">
   <link rel="stylesheet" href="./index-D59Us9KT.css">
 </head>
@@ -81,7 +86,7 @@
       </div>
 
       <!-- Activity Log Box -->
-      <div class=" w-full rounded-xl bg-white p-6 shadow-sm lg:w-80">
+      <section class="flex flex-col w-full rounded-xl bg-white p-6 shadow-sm lg:w-80">
         <div class="mb-4 flex items-center justify-between">
           <div class="flex items-center gap-2 text-gray-600">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 lucide-clock" fill="none" stroke="currentColor"
@@ -96,12 +101,23 @@
             Clear History
           </button>
         </div>
-        <div class="space-y-4">
-          <div class="flex flex-col items-start gap-3" id="activity-log">
 
+        <!-- Dotted Border Added Here -->
+        <div class="w-full border-t-2 border-dotted border-gray-300 my-4"></div>
+
+        <!-- Activity Log Section -->
+        <div class="w-full rounded-xl p-3">
+          <div class="space-y-4">
+            <div class="flex flex-col items-start gap-3" id="activity-log">
+              <!-- Your activity log content goes here -->
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+
+
+
     </div>
     <script type="module" src="./app.js"></script>
 </body>
