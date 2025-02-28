@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DevBoard</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-icons@latest/dist/lucide.css">
-  <link rel="stylesheet" href="./index-CQfYVEE1.css">
+  <link rel="stylesheet" href="./index-D59Us9KT.css">
 </head>
 
 <body class="min-h-screen bg-gray-50 p-4 md:p-8">
@@ -39,20 +39,20 @@
       <div class="flex-1 rounded-xl bg-white p-6 shadow-sm">
         <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <!-- Task Assigned -->
-          <div class="flex items-center gap-4 rounded-lg bg-[#F4F7FF] w-[263px] h-[128px] px-10 py-5">
+          <div class="flex items-center gap-4 rounded-lg bg-[#F4F7FF] md:w-1/2 lg:w-1/4 w-full h-[140px] px-5 ">
             <div class="p-2 inline-block rounded rounded-[30px] outline-8 outline-white">
-              <img src="./photo/checkbox.png" alt="">
+              <img src="./photo/checkbox.png" alt="" class="w-8 h-8">
             </div>
             <div>
               <p class="text-sm text-gray-600">Task Assigned</p>
-              <p class="text-xl text-[30px] text-black font-bold" id="task-assigned">0</p>
+              <p class="text-[40px] font-bold text-black" id="task-assigned">0</p>
             </div>
           </div>
 
           <!-- Banner -->
-          <a href="./blog.html">
+          <a href="./blog.html" class="lg:w-2/3 w-full">
             <div
-              class="rounded-lg bg-gradient-to-r from-blue-500 to-blue-400 w-[60%] w-[524px] h-[128px] px-10 py-5 text-center text-white shadow-lg flex items-center justify-center"
+              class="rounded-lg bg-gradient-to-r from-blue-500 to-blue-400 w-full h-[140px] px-5 text-center text-white shadow-lg flex items-center justify-center"
               style="border-radius: 12px; background: linear-gradient(92deg, #3752FD 0.25%, #6C7FFA 52.64%, #9BA8F8 99.84%);">
               <div class="flex items-center gap-3">
                 <div class="flex h-12 w-12 items-center justify-center rounded-l-lg bg-white bg-opacity-20">
@@ -66,13 +66,13 @@
             </div>
           </a>
 
-
           <!-- Date -->
-          <div class="flex items-center gap-3 rounded-lg bg-[#F4F7FF] w-[263px] h-[128px] text-center px-10 py-5 ">
-            <div class="flex h-10 w-10 items-center justify-center rounded-[30px]">
-              <img src="./photo/calender.png" alt="">
+          <div
+            class="flex items-center gap-3 rounded-lg bg-[#F4F7FF] md:w-1/2 lg:w-1/4 w-full h-[140px] text-center px-5 ">
+            <div class="flex h-12 w-12 items-center justify-center rounded-[30px]">
+              <img src="./photo/calender.png" alt="" class="w-10 h-10">
             </div>
-            <p class="text-[18px] text-gray-700 font-bold" id="date"></p>
+            <p class="text-[17px] text-gray-700 font-bold w-full" id="date"></p>
           </div>
         </div>
 
@@ -96,7 +96,7 @@
             Clear History
           </button>
         </div>
-        <div class=" space-y-4">
+        <div class="space-y-4">
           <div class="flex flex-col items-start gap-3" id="activity-log">
 
           </div>

@@ -37,75 +37,68 @@ const cards = [
   },
 ];
 
-//date
 const date = document.getElementById("date");
 const today = new Date();
 date.innerHTML = today.toDateString();
 
-// Show cards
 const getCards = document.getElementById("task-cards");
 
 getCards.innerHTML = cards
   .map((card, index) => {
     return `
-    <div class="rounded-xl bg-[#F4F7FF] p-5 ">
-      <p class="mb-2 text-sm font-medium text-gray-600">${card.label}</p>
-      <h3 class="mb-3 text-lg font-semibold text-gray-800">
-        ${card.title}
-      </h3>
-      <p class="mb-6 text-sm text-gray-400">
-        ${card.description}
-      </p>
-      <div class="flex items-center justify-between">
-        <div>
-          <p class="text-xs text-gray-400">Deadline</p>
-          <p class="text-sm font-medium text-gray-600">${today.toDateString()}</p>
-        </div>
-        <button id="complete-btn-${index}" class="rounded-lg bg-[#3752FD] px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700">
-          Complete
-        </button>
-      </div>
+    <div class="rounded-xl bg-[#F4F7FF] p-5 md:p-6 lg:p-7 w-full max-w-md md:max-w-lg lg:max-w-xl">
+  <p class="mb-2 text-sm font-medium text-gray-600 bg-white px-5 py-3 rounded-lg w-fit max-w-[80%] sm:max-w-[70%] md:max-w-[60%]">
+    ${card.label}
+  </p>
+  <h3 class="mb-3 text-lg font-semibold text-gray-800 text-wrap">
+    ${card.title}
+  </h3>
+  <p class="mb-6 text-sm text-gray-400 bg-white px-5 py-5 rounded-lg text-center break-words">
+    ${card.description}
+  </p>
+  <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="text-center sm:text-left">
+      <p class="text-xs text-gray-400">Deadline</p>
+      <p class="text-sm font-medium text-gray-600">${today.toDateString()}</p>
     </div>
+    <button id="complete-btn-${index}" class="w-full sm:w-auto rounded-lg bg-[#3752FD] px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700">
+      Complete
+    </button>
+  </div>
+</div>
+
   `;
   })
   .join("");
 
-// Task Counter (Separate from cards.length)
 let taskCounter = cards.length;
 
-// Task Number
 const tasNum = document.getElementById("task-assigned");
 tasNum.innerHTML = taskCounter;
 
-// Activity Log
 const activityLog = document.getElementById("activity-log");
 
-// Select all buttons dynamically using a common selector
 const completeButtons = document.querySelectorAll("[id^='complete-btn-']");
-
 completeButtons.forEach((btn, index) => {
   btn.addEventListener("click", () => {
-    btn.textContent = "Completed"; // Update the button text
-    const card = cards[index]; // Get the card corresponding to the button clicked
-
+    btn.textContent = "Completed";
+    const card = cards[index];
     if (!btn.disabled) {
       alert("Board updated successfully");
-      btn.disabled = true; // Disable the button
+      btn.disabled = true;
       btn.classList.add("bg-gray-400");
       btn.classList.remove("hover:bg-indigo-700");
 
-      // Update the task number (assigned tasks)
       taskCounter -= 1;
       tasNum.innerHTML = taskCounter;
 
       const complateTask = document.getElementById("completed-tasks");
       complateTask.innerText++;
 
-      // Ensure activityLog exists
       if (activityLog) {
         activityLog.insertAdjacentHTML(
           "beforeend",
-          `<div class="flex-1">
+          `<div class="flex-1 px-4 py-4 bg-[#F4F7FF] rounded-lg">
             <p class="text-sm text-gray-800">
               <span class="font-medium">You have completed the task:</span> ${
                 card.title
@@ -118,8 +111,6 @@ completeButtons.forEach((btn, index) => {
     }
   });
 });
-
-//theme color
 
 const theButton = document.getElementById("theme-btn");
 
