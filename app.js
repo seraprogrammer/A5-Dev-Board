@@ -67,12 +67,12 @@ completedTaskCounter.innerText = 0; // Ensure it starts from 0
 document.querySelectorAll(".complete-btn").forEach((btn) => {
   btn.addEventListener("click", (event) => {
     const index = event.target.dataset.index;
-    if (!index) return;
+    if (index === undefined) return; // Ensure valid index
 
-    btn.textContent = "Completed";
-    btn.disabled = true;
-    btn.classList.add("bg-gray-400", "cursor-not-allowed");
-    btn.classList.remove("hover:bg-blue-700");
+    event.target.textContent = "Completed";
+    event.target.disabled = true;
+    event.target.classList.add("bg-gray-400", "cursor-not-allowed");
+    event.target.classList.remove("hover:bg-blue-700");
 
     // Reduce task counter
     taskCounter -= 1;
