@@ -47,39 +47,38 @@ getCards.innerHTML = cards
   .map((card, index) => {
     return `
     <div class="rounded-xl bg-[#F4F7FF] p-5 md:p-6 lg:p-7 w-full max-w-md md:max-w-lg lg:max-w-xl shadow-lg">
-  <p class="mb-2 text-sm font-medium text-gray-600 bg-white px-5 py-3 rounded-lg w-fit max-w-[80%] sm:max-w-[70%] md:max-w-[60%]">
-    ${card.label}
-  </p>
-  <h3 class="mb-3 text-lg font-semibold text-gray-800 text-wrap">
-    ${card.title}
-  </h3>
- <div class="px-2">
-  <p class="mb-6 text-gray-400 bg-white px-5 py-5 rounded-lg text-center break-words">
-    ${card.description}
-  </p>
-  </div>
-  <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-    <div class="text-center sm:text-left">
-      <p class="text-xs text-gray-400">Deadline</p>
-      <p class="text-sm font-medium text-gray-600">${today.toDateString()}</p>
+      <p class="mb-2 text-sm font-medium text-gray-600 bg-white px-5 py-3 rounded-lg w-fit max-w-[80%] sm:max-w-[70%] md:max-w-[60%]">
+        ${card.label}
+      </p>
+      <h3 class="mb-3 text-lg font-semibold text-gray-800 text-wrap">
+        ${card.title}
+      </h3>
+      <div class="px-2">
+        <p class="mb-6 text-gray-400 bg-white px-5 py-5 rounded-lg text-center break-words">
+          ${card.description}
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-center sm:text-left">
+          <p class="text-xs text-gray-400">Deadline</p>
+          <p class="text-sm font-medium text-gray-600">${today.toDateString()}</p>
+        </div>
+        <button id="complete-btn-${index}" class="w-full sm:w-auto rounded-lg bg-[#3752FD] px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700">
+          Complete
+        </button>
+      </div>
     </div>
-    <button id="complete-btn-${index}" class="w-full sm:w-auto rounded-lg bg-[#3752FD] px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700">
-      Complete
-    </button>
-  </div>
-</div>
-
   `;
   })
   .join("");
 
 let taskCounter = cards.length;
-
 const tasNum = document.getElementById("task-assigned");
 tasNum.innerHTML = taskCounter;
 
 const activityLog = document.getElementById("activity-log");
 
+const completeButtons = document.querySelectorAll("[id^='complete-btn-']");
 completeButtons.forEach((btn, index) => {
   btn.addEventListener("click", () => {
     btn.textContent = "Completed";
@@ -110,7 +109,7 @@ completeButtons.forEach((btn, index) => {
         );
       }
 
-      // Check if all tasks are completed
+      // Show final alert when all tasks are completed
       if (taskCounter === 0) {
         setTimeout(() => {
           alert("Congratulations! You have completed all your tasks.");
