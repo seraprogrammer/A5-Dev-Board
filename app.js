@@ -60,7 +60,7 @@ taskCards.innerHTML = cards
 
 let taskCounter = cards.length;
 taskCounterElem.innerText = taskCounter;
-completedTaskCounter.innerText = 0;
+completedTaskCounter.innerText = 23;
 
 // Attach event listeners AFTER elements are added to the DOM
 document.querySelectorAll(".complete-btn").forEach((btn) => {
