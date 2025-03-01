@@ -80,7 +80,6 @@ tasNum.innerHTML = taskCounter;
 
 const activityLog = document.getElementById("activity-log");
 
-const completeButtons = document.querySelectorAll("[id^='complete-btn-']");
 completeButtons.forEach((btn, index) => {
   btn.addEventListener("click", () => {
     btn.textContent = "Completed";
@@ -109,6 +108,13 @@ completeButtons.forEach((btn, index) => {
             <p class="text-xs text-gray-500">${today.toDateString()}</p>
           </div>`
         );
+      }
+
+      // Check if all tasks are completed
+      if (taskCounter === 0) {
+        setTimeout(() => {
+          alert("Congratulations! You have completed all your tasks.");
+        }, 500);
       }
     }
   });
